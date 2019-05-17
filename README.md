@@ -1,0 +1,11 @@
+# Lawo 28x16 with LED
+
+This display is one of the various displays made by the company Lawo-Luminator-Europa Mark IV Industries GmbH. It's resolution of 28 dots in width, 16 dots in height and no PCB overlaps on two sides together with a second connector made it suitable for flush sideway mounting to form the destination sign in front of busses. This display also have a build in lighting function as each dot has a LED mounted close to it which could be all either on or off at the same time.
+
+Driving it requires additional hardware as it only has one FP2800a onboard which has its 28 outputs wired to the column pins of the flip-dot elements. The additional hardware for driving the rows, which could be another FP2800a*, needs to be connected via the IDC connector. 
+
+Each of the 16 rows actually needs two connections to perform the desired action. The reason or that lies within the construction of each individual dot as they contain two diodes. Driving one flip-dot requires alternating the current flow according to the desired action - set it to the colored face or reset to the black. For example using two FP2800a, the one onboard and an additional one, they need to be controlled in such a way that they alternate between being the source or drain (one always the opposite of the other) and additionally have the correct outputs selected when activated. Speaking about activation, it also must be ensured that the flip-dots receive current only for a very short time to not burn out. Controlling and powering the onboard FP2800a is done via some of the remaining pins of the IDC connector. The exact pinout can be found in the schematic below.
+
+![Schematic of the IC socket and connector on a Lawo display with 28x16 flip-dots](Schematic/Plots/Lawo%2028x16%20with%20LED%20Matrix%20Components.svg)
+
+Please also consider having a look at the parent project [Flip-The-Dot](https://github.com/RobsyRocket/Flip-The-Dot) and its sub-project called [Flip-The-Dot Lawo 28x13 Controller](https://github.com/RobsyRocket/Flip-The-Dot_Lawo_28x13_Controller) which is about a PCB to ease wiring and controlling such Lawo display which have similar 50 pin connectors.
