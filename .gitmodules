@@ -1,0 +1,3 @@
+[submodule "Schematic/KiCad libraries/FP2800a"]
+	path = Schematic/KiCad libraries/FP2800a
+	url = https://github.com/RobsyRocket/FP2800a
